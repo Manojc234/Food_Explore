@@ -1,4 +1,7 @@
 import axios from 'axios';
 
-axios.defaults.baseURL =
-  process.env.NODE_ENV ='https://food-explore.onrender.com/';
+const instance = axios.create({
+  baseURL: 'https://food-explore.onrender.com/',
+});
+
+export default instance;
