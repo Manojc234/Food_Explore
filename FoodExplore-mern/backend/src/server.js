@@ -20,9 +20,10 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: ['http://Food_Explore.vercel.app'],
+    origin: ['http://localhost:3000'],
   })
 );
+
 
 app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
@@ -38,6 +39,7 @@ app.get('*', (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+const HOST = '0.0.0.0';
+app.listen(PORT,HOST ,() => {
   console.log('listening on port ' + PORT);
 });
